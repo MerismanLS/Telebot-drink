@@ -5,7 +5,7 @@ import json
 import time
 time.sleep(5)
 
-bot = telebot.TeleBot('6601149229:AAHlVxHhp8CAtYv30YNK-eP1BEWXd-SZ5LI')
+bot = telebot.TeleBot(token)
 coding = "utf-8"
 path = "/data/table.json"
 # path = "C:/Users/user/PycharmProjects/tgbot2/table.json"
@@ -70,7 +70,7 @@ def get_text_messages(message):
     global tbl
     if message.text == "Водка":
         global counter
-        if message.from_user.username == "Nastiks_169":
+        if message.from_user.username == user_nickname:
             if counter == 0:
                 bot.send_message(message.chat.id, "Хватит пить, пора трезветь!")
                 counter += 1
